@@ -1,37 +1,30 @@
-// Arrays are not primitive value types, they are: 
-// REFERENCE TYPE  
-// They store a list of values 
-
-// ONLY TWO VALUE TYPES THAT CAN BE ITERATED OVER: ARRAYS AND STRINGS 
-
-const fruits = ['apple', 'orange', 'kiwi', 'grape', 'strawberry', 'lychee', 'plantain'];
-const names = ['Roman', 'Michael', 'Nina', 'Adonis'];
-const data = [
-    ['Nina', 'DeLucia', 31, '1234 Market Street', '555-555-5555'], 
-    ['baking', 'jogging']
-];
-
+// MAKING FUNCTIONS 
+// MAKING A SIMPLE FUNCTION HERE
+// -----------------------------------------------------
 /*
-// BASIC FOR LOOP MADE OF 3 PARTS:
-// ASSIGNMENT OF VARIABLE 
-// CONDITION - LOOP REPEATS WHILE THIS IS TRUE 
-// INCREMENTOR 
-// HERE IS AN EXAMPLE OF A SIMPLE LOOP 
-for (let count = 1; count <= 6; count++) {
-    console.log(count);
+// YOU CAN CALL A FUNCTION BEFORE IT IS WRITTEN. THAT IS CALLED HOISTING 
+doSomething();
+
+// IN TECHNICAL TERMS, A FUNCTION THAT IS NEVER CALLED IS 'GARBAGE'. THE COMPUTER DOES NOT COMMIT IT TO MEMORY AND IT IS 'GARBAGE COLLECTED' 
+function doSomething() {
+    console.log('The doSomething() function ran!');
+    console.log('This is the second console.log!');
+    console.log('This is the third console.log!');
 }
-// LOOPS NEED TO FINISH BEFORE THE REST OF YOUR CODE RUNS
-console.log('The loop is done running!');
+
+doSomething();
 */
-
-// "For now, I'm going to leave you with this one loop that you can use for any of your looping needs"
-
+// -----------------------------------------------------
 /*
-// USE FOR LOOPS TO PRINT OUT THE ITEMS IN AN ARRAY 
-// DO IT HERE WITH FRUITS ARRAY ABOVE:
-for (let i = 0; i < fruits.length; i++) {
-    console.log(fruits[i]);
+// MAKE MY OWN FUNCTION TO DISPLAY AN ARRAY 
+const names = ['Izzy', 'Matt', 'City', 'Kandyce'];
+function printArray() {
+    for (let i = 0; i < names.length; i++) {
+        console.log(names[i]);
+    }
 }
-// i IS FOR INDEX
-*/
+printArray();
 
+// SCOPE - LEVELS OF MEMORY (i.e. GLOBAL SCOPE; DECLARING A VARIABLE IN A FUNCTION MEANS IT IS 'SCOPED')
+// LEAVING OUT THE 'LET' IN THE DECLARATION OF A FOR LOOP WILL MAKE THE VARIABLE GLOBAL. THIS IS BAD 99% OF THE TIME 
+*/ 
