@@ -1,52 +1,27 @@
-// MAKING FUNCTIONS 
-// MAKING A SIMPLE FUNCTION HERE
-// -----------------------------------------------------
-/*
-// YOU CAN CALL A FUNCTION BEFORE IT IS WRITTEN. THAT IS CALLED HOISTING 
-doSomething();
+// -------------------------------------
+// LEARN BASICS OF OBJECTS 
+// -------------------------------------
+// -------------------------------------
 
-// IN TECHNICAL TERMS, A FUNCTION THAT IS NEVER CALLED IS 'GARBAGE'. THE COMPUTER DOES NOT COMMIT IT TO MEMORY AND IT IS 'GARBAGE COLLECTED' 
-function doSomething() {
-    console.log('The doSomething() function ran!');
-    console.log('This is the second console.log!');
-    console.log('This is the third console.log!');
-}
+// 'OBJECT' IS A KIND OF VALUE TYPE 
+// NOTES IS AN ARRAY AND OBJECT 
+const notes = ['JS is cool', 'create a constant with const', 'use the src attribute on the script tag to load a js file'];
+// CALL OBJECT WITH .[text] TO CALL A METHOD - LIKE [.push]
+// .push('new note') ADDS A NEW NOTE TO THE ARRAY 
+notes.push('.push example');
+// ADD TO THE BEGINNING WITH [.unshift]
+notes.unshift('.unshift example');
+console.log(notes);
+// YOU CAN FIND LISTS OF BUILT-IN METHODS ONLINE; INCLUDING [ .length - GIVES LENGTH OF A STRING ] or [ .pop - REMOVES LAST ITEM OF AN ARRAY] or [ .shift - REMOVES FIRST ITEM OF AN ARRAY] or [ .splice - REMOVE AN ITEM SOMEWHERE BETWEEN THE BEGINNING AND END OF AN ARRAY ] 
+notes.pop();
+notes.shift();
+console.log(notes);
+// DEMONSTRATING SLICE NEXT
+const notes2 = notes; // MAKE A COPY
+console.log(notes2);
+notes2.splice(2, 1); // START AT INDEX 2 AND REMOVE ONE ITEM 
+console.log(notes2);
 
-doSomething();
-*/
-// -----------------------------------------------------
-/*
-// MAKE MY OWN FUNCTION TO DISPLAY AN ARRAY 
-const names = ['Izzy', 'Matt', 'City', 'Kandyce'];
-function printArray() {
-    for (let i = 0; i < names.length; i++) {
-        console.log(names[i]);
-    }
-}
-printArray();
+// -------------------------------------
+// -------------------------------------
 
-// SCOPE - LEVELS OF MEMORY (i.e. GLOBAL SCOPE; DECLARING A VARIABLE IN A FUNCTION MEANS IT IS 'SCOPED')
-// LEAVING OUT THE 'LET' IN THE DECLARATION OF A FOR LOOP WILL MAKE THE VARIABLE GLOBAL. THIS IS BAD 99% OF THE TIME 
-*/ 
-
-function add(num1, num2) {
-    console.log(num1 + num2);
-    return num1 + num2;
-}
-
-add(10, 5);
-add(20, 100);
-add(50, 5);
-
-function printVals(val1, val2, val3, val4) {
-    console.log(val4[1]);
-}
-
-printVals('some string text', true, 15, ['Michael', 'Nina', 'Roman']);
-
-
-// WHEN YOU CALL UPON A FUNCTION, IT CAN ANSWER BACK
-// BY DEFAULT, IT ANSWERS BACK UNDEFINED 
-const variableResult = add();
-console.log(variableResult);
-// USE THE RETURN KEYWORD IN a FUNCTION TO CONTROL WHAT IT ANSWERS BACK WITH 
