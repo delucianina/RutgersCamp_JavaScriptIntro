@@ -1,0 +1,23 @@
+h1 {
+    color: hsl(0, 0%, 0%);
+}
+
+p {
+    color: #da2323;
+}
+
+.crazy {
+    color: rgb(214, 85, 45);
+    background: #201b1b;
+    padding: 25px;
+    border: 3px solid #999;
+}
+
+img {
+    max-width: 20%;
+}
+
+section article {
+    padding: 20px;
+    border: 1px solid #bbb;
+}
