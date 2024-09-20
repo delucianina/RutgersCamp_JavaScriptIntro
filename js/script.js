@@ -2,26 +2,101 @@
 // LEARN BASICS OF OBJECTS 
 // -------------------------------------
 // -------------------------------------
+// AN OBJECT IS AN "ORGANIZED DATA TYPE"
+// THE SYNTAX OF USING THE DOT + METHOD IS CALLED 'DOT NOTATION' 
+/*
+// THIS IS AN EMPTY OBJECT 
+const user = {
 
-// 'OBJECT' IS A KIND OF VALUE TYPE 
-// NOTES IS AN ARRAY AND OBJECT 
-const notes = ['JS is cool', 'create a constant with const', 'use the src attribute on the script tag to load a js file'];
-// CALL OBJECT WITH .[text] TO CALL A METHOD - LIKE [.push]
-// .push('new note') ADDS A NEW NOTE TO THE ARRAY 
-notes.push('.push example');
-// ADD TO THE BEGINNING WITH [.unshift]
-notes.unshift('.unshift example');
-console.log(notes);
-// YOU CAN FIND LISTS OF BUILT-IN METHODS ONLINE; INCLUDING [ .length - GIVES LENGTH OF A STRING ] or [ .pop - REMOVES LAST ITEM OF AN ARRAY] or [ .shift - REMOVES FIRST ITEM OF AN ARRAY] or [ .splice - REMOVE AN ITEM SOMEWHERE BETWEEN THE BEGINNING AND END OF AN ARRAY ] 
-notes.pop();
-notes.shift();
-console.log(notes);
-// DEMONSTRATING SLICE NEXT
-const notes2 = notes; // MAKE A COPY
-console.log(notes2);
-notes2.splice(2, 1); // START AT INDEX 2 AND REMOVE ONE ITEM 
-console.log(notes2);
+}; // INCLUDE THE ; HERE!
+*/
+// -------------------------------------
+// -------------------------------------
+// LET'S STORE USER INFO
+// SYNTAX IS SIMILAR TO CSS, BUT NOT THE SAME. i.e. - SEPARATE PROPERTIES/VALUES WITH , NOT ;
+const user = {
+    name: 'Nina',
+    age: 31,
+    phone: '555-555-5555',
+    address: '1234 Market Street',
+    info: {
+        location: 'Philly',
+        hobbies: ['jogging', 'baking'],
+    },
+    printAge: function() {
+        console.log(this.age); //'this' keyword points to parent object
+    },
+    haveBirthday: function() {
+        this.age++;
+        console.log('Happy Birthday! You are now', this.age, 'years old!');
+    },
+    addHobby: function(newHobby) {
+        // Need to reference an argument that is passed to addHobby (string of a hobby)
+        // Push the argunent(hobby) to the info.hobbies array
+        this.info.hobbies.push(newHobby);
+        // this is saving it
+    },
+    printHobby: function() {
+        //console.log the hobbies array 
+        // console.log(this.info.hobbies[2]);
+        // BONUS - loop over the hobbies array and console.log that 
+        // In JavaScript, the standard for loop is fastest (with the 3 parts) 
+        for (let i = 0; i < this.info.hobbies.length; i++) {
+            console.log(this.info.hobbies[i]);
+        }
+        /*
+        // YOU CAN MAKE A SIMPLER LOOP WITH THE OF KEYWORD - 'OF' POINTS AT THE STRING AND PRINTS AS LONG AS IT IS TRUE (EXISTS)
+        for (let hobby of this.info.hobbies) {
+            console.log(hobby);
+        }
+            */
+    },
+    emptyFunction: function() {
+        //Empty
+    }
+};
+// console.log()
+user.addHobby('gaming');
+user.printHobby(); 
+// RUNNING A FUNCTION BY NAME WITHOUT CALLING IT WILL RETURN THE ENTIRE FUNCTION 
+// console.log(user.emptyFunction);
+/*
+// PRINT THE AGE
+console.log(user.age);
+// PRINT THE ADDRESS 
+console.log(user.address);
+// CAN ALSO JUST PRINT ONE INDEXED ITEM OF STRING
+console.log(user.address[8]);
+*/
+/* 
+// THIS ERROR KILLS THE PROGRAM!
+// IF YOU TRY TO DOT NOTATE SOMETHING THAT IS NOT AN OBJECT, THE ERROR WILL SAY IT CANNOT READ THE PROPERTIES. BUT UNFORTUNATELY IT WON'T SPECIFY THAT YOU AREN'T CALLING ON AN OBJECT
+// console.log(null.length); 
+*/
+/*
+// ALSO THROWS ERROR THAT IT CANNOT READ THE PROPERTY
+console.log(user.height);
+// IF YOU'RE GIVEN A FALSEY RESPONSE, YOU CAN USE THAT TO WRITE CONDITIONAL CODE - LIKE "YOU HAVE NOT PROVIDED THIS INFO; PLEASE GIVE IT TO US NOW"
+if (!user.height) {
+    console.log('You have not provided this info');
+}
+*/
+/*
+// ACCESSING NESTED DATA
+console.log(user.info.hobbies[1]);
+*/
+/*
+// PULL INFO FROM A STAR WARS API - https://swapi.dev/ - AND PRINT IT OUT TO THE CONSOLE 
+fetch('https://swapi.dev/api/people')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+*/
+// CALLING A FUNCTION STORED INSIDE AN OBJECT 
+// user.haveBirthday();
+
+
 
 // -------------------------------------
 // -------------------------------------
-
