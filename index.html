@@ -12,18 +12,48 @@
 <body>
     <header class="d-flex justify-content-between p-5">
         <h3>A Note App!</h3>
-        <button id="add-btn" class="btn btn-primary">Add New Note</button>
+
+        <nav>
+            <button id="add-btn" class="btn btn-primary">Add New Note</button>
+            <button id="random-btn" class="btn btn-primary">Get Random Note</button>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#note-modal">
+                Enter User Info
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="note-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Note Title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="modal-text-content">Note Text Content</p>
+                            <p class="modal-date">Added: 9/24/2024</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
     </header>
+
     <main class="px-5">
         <h1 class="mb-3">Notes:</h1>
         <section class="output">
-            <article class="border border-light-subtle p-3 rounded rounded-3 text-black-75 bg-danger-subtle mb-3">
-                <h3>Note One</h3>
-                <p>JS event listeners are cool!</p>
-                <p>Added: 9/20/2024</p>
-            </article> 
+            <!-- <h6 class="text-secondary">No notes have been added yet!</h6> -->
+            <!-- NOTES GOING HERE  -->
         </section>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
     <!-- PUT SCRIPT AT BOTTOM - HTML NEEDS TO LOAD FIRST -->
 </body>
